@@ -16,7 +16,7 @@ function BotsPage() {
 
 useEffect(
   ()=>{
-    fetch('http://localhost:8002/bots')
+    fetch('https://mypracticecode-2.onrender.com/bots')
   .then((response) => response.json())
   .then((json) => setBots(json));
   },[]
@@ -41,7 +41,7 @@ function addBot(bot) {
   }
 
   function deleteBot(botId) {
-    fetch(`http://localhost:8002/bots/${botId}`, {
+    fetch(`https://mypracticecode-2.onrender.com/bots/${botId}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json'
@@ -52,7 +52,7 @@ function addBot(bot) {
         throw new Error('Failed to delete bot');
       }
       alert("Deleted successfully!");
-      return fetch('http://localhost:8002/bots'); 
+      return fetch('https://mypracticecode-2.onrender.com/bots'); 
     })
     .then(response => response.json()) 
     .then(json => setBots(json))
